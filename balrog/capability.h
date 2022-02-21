@@ -1,3 +1,3 @@
-void startExfiltration();
-void startKeyLogging(); 
-void startReverseShell();
+#include "keylogging.h";
+#include "reverseshell.h";
+#include "exfiltration.h";

